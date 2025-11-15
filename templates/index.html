@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+{% block content %}
+<h1>Recipe Generator</h1>
+<p>Select ingredients you have (comma-separated) or click suggestions:</p>
+<div class="pane">
+<textarea id="ingredients-input" placeholder="eg: eggs, tomato, onion"></textarea>
+<div class="suggestions">
+<p>Suggestions:</p>
+<div class="tags">
+{% for ing in ingredients[:30] %}
+<button class="tag">{{ ing }}</button>
+{% endfor %}
+</div>
+</div>
+<div class="controls">
+<label><input type="radio" name="match" value="partial" checked> Partial match</label>
+<label><input type="radio" name="match" value="exact"> Exact match</label>
+<button id="find-btn">Find Recipes</button>
+</div>
+<div id="results"></div>
+</div>
+{% endblock %}

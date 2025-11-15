@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+{% block content %}
+<h1>Add Recipe</h1>
+<form method="POST">
+<label>Title<br><input name="title" required></label><br>
+<label>Ingredients (comma-separated)<br><input name="ingredients" placeholder="eg: eggs, onion, tomato" required></label><br>
+<label>Steps<br><textarea name="steps" rows="6"></textarea></label><br>
+<label>Tags (comma-separated)<br><input name="tags"></label><br>
+<button type="submit">Add</button>
+</form>
+{% endblock %}
